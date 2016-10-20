@@ -19,6 +19,7 @@ var gruntConfig = {
                 options: {
                     timeout: 60000,
                     reporter: 'spec-xunit-file',
+                    captureFile: 'tests/sauce/test-cases.json'
                 },
                 src: ['tests/sauce/test-cases.js']
             }
@@ -33,13 +34,13 @@ var gruntConfig = {
             test: {
                 options: {
                     jshintrc: 'test/.jshintrc'
-                },                
+                },
                 src: ['test/*.js']
             },
         },
         concurrent: {
             'test-sauce': [], // dynamically filled
-        },  
+        },
         watch: {
             gruntfile: {
                 files: '<%= jshint.gruntfile.src %>',
@@ -53,7 +54,7 @@ var gruntConfig = {
     };
 
 _.forIn(desireds,function(desired, key) {
-    gruntConfig.env[key] = { 
+    gruntConfig.env[key] = {
         DESIRED: JSON.stringify(desired)
     };
     //gruntConfig.concurrent['test-sauce'].push('test:sauce:' + key);
