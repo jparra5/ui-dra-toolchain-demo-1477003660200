@@ -17,12 +17,8 @@ var gruntConfig = {
             },
             sauce_node: {
                 options: {
-                  timeout: 60000,
-                  reporter: 'json',
-                  clearRequireCache: true,
-                  colors: true,
-                  quite: true,
-                  captureFile: 'mocha.json'
+                    timeout: 60000,
+                    reporter: 'spec-xunit-file',
                 },
                 src: ['tests/sauce/test-cases.js']
             }
