@@ -17,6 +17,7 @@ var gruntConfig = {
             },
             sauce_node: {
                 options: {
+                  timeout: 60000,
                   reporter: 'json',
                   clearRequireCache: true,
                   colors: true,
