@@ -17,13 +17,15 @@ var gruntConfig = {
             },
             sauce_node: {
                 options: {
-                    timeout: 60000,
-                    reporter: 'spec-xunit-file',
-                    captureFile: 'tests/sauce/test-cases.json'
+                  reporter: 'json',
+                  clearRequireCache: true,
+                  colors: true,
+                  quite: true,
+                  captureFile: 'mocha.json'
                 },
                 src: ['tests/sauce/test-cases.js']
             }
-        },    
+        },
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
